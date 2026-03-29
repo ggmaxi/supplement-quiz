@@ -571,182 +571,413 @@ footer {
 <section id="gtm">
   <div class="container">
     <div class="label label-green">GO-TO-MARKET</div>
-    <h2 class="section-title">How we get distribution</h2>
-    <p class="section-sub">This is a media + affiliate business, not a DTC brand. The GTM playbook is closer to Wirecutter than to a supplement company.</p>
+    <h2 class="section-title">Full GTM Playbook</h2>
+    <p class="section-sub">This is a media + affiliate business, not a DTC brand. The playbook is closer to Wirecutter or NerdWallet than any supplement company. Traffic × Trust × Conversion Rate = Revenue. Everything below maps to one of those three levers.</p>
 
-    <!-- Phase 0 -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:6px;">Phase 0 — Before You Drive Traffic <span style="font-size:13px;font-weight:500;color:var(--muted);">Week 1</span></h3>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Get conversion infrastructure right before pushing traffic. A leaky funnel at 10 visitors is a leaky funnel at 10,000.</p>
-    <div class="why-list" style="margin-bottom:48px;">
-      <div class="why-item">
-        <div class="why-emoji">🔗</div>
-        <div class="why-body">
-          <div class="why-title">Wire affiliate programs</div>
-          <div class="why-desc">iHerb Canada (8%), Amazon.ca Associates (6–10%), Popeye's Supplements, Natural Health Trends. Free to join — do it this week.</div>
-        </div>
+    <!-- Core equation callout -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:28px;margin-bottom:48px;display:flex;gap:12px;align-items:flex-start;">
+      <div style="font-size:24px;flex-shrink:0;">🧮</div>
+      <div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px;">The fundamental equation</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--green);margin-bottom:10px;">Traffic × Trust × Conversion Rate = Revenue</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.7;">Every decision — what content to write, which channels to use, how to design the quiz results — should be evaluated against which of these three it improves. Most founder mistakes come from optimising one while destroying another (e.g. paid traffic spikes volume but tanks trust and conversion rate).</div>
       </div>
-      <div class="why-item">
-        <div class="why-emoji">📧</div>
-        <div class="why-body">
-          <div class="why-title">Add email capture to the results page</div>
-          <div class="why-desc">"Email me my protocol." Single field. The email list is the one asset you fully own — affiliate links change, social accounts get banned, email doesn't.</div>
-        </div>
+    </div>
+
+    <!-- ─── PHASE 0 ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--green);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 0</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">Infrastructure <span style="font-size:14px;font-weight:500;color:var(--muted);">Week 1 — before driving a single visitor</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">A leaky funnel at 10 visitors is a leaky funnel at 10,000. Fix it first.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:56px;">
+      <div class="rev-card">
+        <div class="rev-icon">🔗</div>
+        <div class="rev-name">Wire affiliate programs</div>
+        <div class="rev-desc">Sign up for: <strong style="color:var(--text)">iHerb Canada</strong> (8% commission, 30-day cookie), <strong style="color:var(--text)">Amazon.ca Associates</strong> (6–10%, 24hr cookie), <strong style="color:var(--text)">Popeye's Supplements</strong> (direct), <strong style="color:var(--text)">BodyEnergy Club</strong> (BC-based, 10%+). All free. No minimum traffic requirement. Do this week.</div>
       </div>
-      <div class="why-item">
-        <div class="why-emoji">📊</div>
-        <div class="why-body">
-          <div class="why-title">Set up analytics</div>
-          <div class="why-desc">Plausible or GA4. Track: traffic source → quiz completion → affiliate click. You need to know what converts before scaling anything.</div>
-        </div>
+      <div class="rev-card">
+        <div class="rev-icon">📧</div>
+        <div class="rev-name">Email capture on results page</div>
+        <div class="rev-desc">"Email me my protocol" — single field, zero friction. Use <strong style="color:var(--text)">Beehiiv</strong> (free to 2,500 subs, built-in monetization later) or ConvertKit. Email is the only audience you fully own. Social accounts get banned. Affiliate programs change. Email compounds forever.</div>
       </div>
-      <div class="why-item">
-        <div class="why-emoji">🌐</div>
-        <div class="why-body">
-          <div class="why-title">Get a real domain</div>
-          <div class="why-desc">stacksmart.ca or similar. GitHub Pages is a prototype URL. A .ca domain also signals Canadian relevance to Google — matters for SEO.</div>
+      <div class="rev-card">
+        <div class="rev-icon">📊</div>
+        <div class="rev-name">Analytics — track what matters</div>
+        <div class="rev-desc">Use <strong style="color:var(--text)">Plausible.io</strong> ($9/mo, privacy-first, no cookie banner needed). Set up goals for: quiz start → quiz complete → affiliate click → email signup. You need to know your quiz completion rate (target: 60%+) and affiliate CTR (target: 20%+) before spending a dollar on distribution.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-icon">🌐</div>
+        <div class="rev-name">Domain + hosting</div>
+        <div class="rev-desc">Register <strong style="color:var(--text)">stacksmart.ca</strong> (~$20/yr via Namecheap). Deploy to Vercel or Netlify (free tier). A .ca TLD signals Canadian relevance to Google — measurably helpful for local SEO. GitHub Pages is a prototype URL, not a brand.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-icon">⚖️</div>
+        <div class="rev-name">Legal basics</div>
+        <div class="rev-desc">Add an affiliate disclosure ("This site contains affiliate links") — legally required in Canada under Competition Bureau guidelines. Add a basic privacy policy (use Termly free tier). Takes 20 minutes, protects you permanently. Also adds trust signals.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-icon">🔍</div>
+        <div class="rev-name">Google Search Console + Bing</div>
+        <div class="rev-desc">Submit your sitemap on day 1. Free. Tells Google you exist and accelerates indexing. Also shows you exactly what search queries drive impressions — invaluable for finding article ideas that already have demand.</div>
+      </div>
+    </div>
+
+    <!-- ─── PHASE 1: SOCIAL ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--blue);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 1</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">Social Distribution <span style="font-size:14px;font-weight:500;color:var(--muted);">Month 1–3 · owned channels first</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">Fastest path to first 1,000 visitors is D's existing X audience. The key insight: <strong style="color:var(--text)">you are the first user of this product</strong>. Your personal journey is the marketing. Not "check out my site" — real education that happens to funnel back to the quiz.</p>
+
+    <!-- X / Twitter playbook -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;margin-bottom:16px;overflow:hidden;">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">𝕏</span>
+          <div>
+            <div style="font-size:15px;font-weight:700;">X / Twitter — Personal Account</div>
+            <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;">HIGHEST ROI · ZERO COST · D HAS 6K FOLLOWERS</div>
+          </div>
+        </div>
+        <div class="rev-potential">First 500 visitors</div>
+      </div>
+      <div style="padding:20px 24px;">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.7;">CT-native founders who build in public consistently outperform polished brand launches. The supplement niche is starved for credible, non-shill voices. You are that voice.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;">High-performing content formats:</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--green);margin-bottom:6px;">FORMAT 1 · PERSONAL STORY THREAD</div>
+            <div style="font-size:13px;color:var(--muted);">"I've been taking the wrong magnesium for 2 years. Here's what I learned, what I switched to, and why most people are wasting money on oxide." → 8-tweet thread with the science → quiz CTA at the end. These threads get shared by people who feel personally called out.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--green);margin-bottom:6px;">FORMAT 2 · MYTH-BUSTING SINGLE TWEET</div>
+            <div style="font-size:13px;color:var(--muted);">"Most Canadians are Vitamin D deficient Oct–Apr. You can't fix it with sun in Calgary. 2000 IU/day minimum. Not 400 IU. [graph showing latitude vs. UV index]. Here's what I take." Short, punchy, saves as screenshot.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--green);margin-bottom:6px;">FORMAT 3 · "MY STACK" REVEAL</div>
+            <div style="font-size:13px;color:var(--muted);">"My exact supplement stack — what I take, dose, why, and where I buy in Canada." Post every 90 days as you iterate. Gets saved + shared. Always link to the quiz: "Not sure what's right for you? I built a 2-minute quiz."</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--green);margin-bottom:6px;">FORMAT 4 · CONTRARIAN TAKE</div>
+            <div style="font-size:13px;color:var(--muted);">"Ashwagandha is overhyped unless you take it for 8 weeks straight. Most people quit at 2 and say it doesn't work." Controversy drives engagement. Evidence-backed contrarianism is the highest-trust play in the health space.</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);background:rgba(52,211,153,0.05);border:1px solid var(--green-border);border-radius:10px;padding:12px;"><strong style="color:var(--green);">Cadence:</strong> 3–4 posts/week. One thread per week. Don't sell — educate. The quiz link goes in the thread, not in every standalone tweet.</div>
+      </div>
+    </div>
+
+    <!-- Reddit playbook -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;margin-bottom:16px;overflow:hidden;">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">🟠</span>
+          <div>
+            <div style="font-size:15px;font-weight:700;">Reddit — Community Play</div>
+            <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;">HIGH INTENT · HIGH TRUST · SLOW BURN</div>
+          </div>
+        </div>
+        <div class="rev-potential">200–500 high-intent/mo</div>
+      </div>
+      <div style="padding:20px 24px;">
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;">Target subreddits (by priority):</div>
+        <div class="econ-wrap" style="margin-bottom:16px;">
+          <table class="econ-table">
+            <thead><tr><th>SUBREDDIT</th><th>MEMBERS</th><th>STRATEGY</th></tr></thead>
+            <tbody>
+              <tr><td class="metric">r/CanadianFitness</td><td>95K</td><td style="font-size:13px;">Primary. Canadian-specific questions about supplements come up weekly. Be the expert.</td></tr>
+              <tr><td class="metric">r/Supplements</td><td>400K</td><td style="font-size:13px;">Answer "what should I take for X" questions. High purchase intent. No spam — earn credibility first.</td></tr>
+              <tr><td class="metric">r/PersonalFinanceCanada</td><td>700K+</td><td style="font-size:13px;">Angle: "stop wasting money on supplements you don't need." The value-conscious audience self-selects.</td></tr>
+              <tr><td class="metric">r/nootropics</td><td>220K</td><td style="font-size:13px;">Focus/brain fog angle. High-intent, overlaps with your energy goal segment.</td></tr>
+              <tr><td class="metric">r/Calgary + r/Alberta</td><td>Combined 500K+</td><td style="font-size:13px;">Local credibility. Share the Vitamin D / Calgary sun data. Always relevant to this audience.</td></tr>
+              <tr><td class="metric">r/xxfitness</td><td>1M+</td><td style="font-size:13px;">Women's fitness. Large underserved audience for supplement advice. Women's health angle is a future expansion.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="font-size:13px;color:var(--muted);background:rgba(248,113,113,0.05);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:12px;"><strong style="color:#f87171;">Critical rule:</strong> Spend 3–4 weeks genuinely helping before ever posting a link. Reddit has a finely tuned spam detector. Build karma in the subreddit first. A single well-timed, genuinely helpful comment with a link outperforms 50 spammy posts.</div>
+      </div>
+    </div>
+
+    <!-- TikTok playbook -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;margin-bottom:16px;overflow:hidden;">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">🎬</span>
+          <div>
+            <div style="font-size:15px;font-weight:700;">TikTok / Instagram Reels</div>
+            <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;">VOLUME PLAY · 90-DAY COMMITMENT · PICK ONE</div>
+          </div>
+        </div>
+        <div class="rev-potential">1 viral = 5–50K impressions</div>
+      </div>
+      <div style="padding:20px 24px;">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.7;">Supplement education is one of the fastest-growing TikTok niches. "SupplementTok" has billions of views. The winning format is 30–60 second myth-busting or stack reveals. Phone camera + decent lighting is enough — production quality correlates negatively with authenticity in this space.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;">Proven video formats for this niche:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--purple);margin-bottom:6px;">THE CABINET REVEAL</div>
+            <div style="font-size:13px;color:var(--muted);">"What's actually in my supplement cabinet and why" — show the bottles, explain each one in 5 seconds. Save-worthy. People screenshot and come back.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--purple);margin-bottom:6px;">THE WASTE ALERT</div>
+            <div style="font-size:13px;color:var(--muted);">"Stop buying [X]. Here's why it doesn't work and what actually does." Controversy + education = shares. High engagement from people who feel vindicated or called out.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--purple);margin-bottom:6px;">THE CANADA-SPECIFIC TAKE</div>
+            <div style="font-size:13px;color:var(--muted);">"Living in Canada? You need to hear this about Vitamin D." Geographic specificity gets massive engagement from Canadian viewers who feel personally addressed.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--purple);margin-bottom:6px;">THE $5 vs $100 STACK</div>
+            <div style="font-size:13px;color:var(--muted);">"The $5 supplement stack that actually works vs the $100 stack you're wasting money on." Budget-conscious content crushes. Universally relatable.</div>
+          </div>
+        </div>
+        <div style="font-size:13px;color:var(--muted);background:rgba(52,211,153,0.05);border:1px solid var(--green-border);border-radius:10px;padding:12px;"><strong style="color:var(--green);">Bio link strategy:</strong> Link to quiz in bio. Every video CTA: "Find out what your stack should be — link in bio." Don't link to the site homepage, link directly to the quiz. Higher conversion.</div>
+      </div>
+    </div>
+
+    <!-- Local / Calgary -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;margin-bottom:56px;overflow:hidden;">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">🍁</span>
+          <div>
+            <div style="font-size:15px;font-weight:700;">Calgary Fitness Community (IRL)</div>
+            <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;">TRUST BUILDER · CONVERTS AT 3X ONLINE</div>
+          </div>
+        </div>
+        <div class="rev-potential">50–200 high-trust/mo</div>
+      </div>
+      <div style="padding:20px 24px;">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">Calgary has a dense fitness culture — CrossFit, hockey, skiing, running. Real-world credibility translates directly online. Early brand ambassadors are worth 100 paid clicks.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="why-item" style="margin:0;background:var(--bg);">
+            <div class="why-emoji">🏋️</div>
+            <div class="why-body"><div class="why-title">Offer a free "supplement audit" at one CrossFit box</div><div class="why-desc">20-minute talk. Show your quiz. Explain what works and what's a waste of money. Leave a QR code. The box owner will share it — they become your first ambassador.</div></div>
+          </div>
+          <div class="why-item" style="margin:0;background:var(--bg);">
+            <div class="why-emoji">🏥</div>
+            <div class="why-body"><div class="why-title">Naturopath & functional medicine clinics</div><div class="why-desc">Calgary has a strong naturopath community. Offer to create a co-branded "patient supplement guide" — they send their patients to your quiz. In return you list them as a "verified practitioner" on the site. Practitioner endorsement = massive trust signal.</div></div>
+          </div>
+          <div class="why-item" style="margin:0;background:var(--bg);">
+            <div class="why-emoji">📱</div>
+            <div class="why-body"><div class="why-title">Calgary fitness Facebook groups + WhatsApp communities</div><div class="why-desc">These groups have 5K–20K highly engaged local members asking supplement questions weekly. Being genuinely helpful here is worth thousands of ad dollars in trust-building.</div></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Phase 1: Distribution -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:6px;">Phase 1 — Distribution <span style="font-size:13px;font-weight:500;color:var(--muted);">Month 1–3</span></h3>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Fastest path to first 1,000 visitors is D's existing X audience (~6K followers) + two owned channels.</p>
-    <div class="rev-grid" style="margin-bottom:48px;">
-      <div class="rev-card">
-        <div class="rev-icon">🐦</div>
-        <div class="rev-phase">HIGHEST ROI · ZERO COST</div>
-        <div class="rev-name">Personal Social (X)</div>
-        <div class="rev-desc">Post authentically about your own stack. Not "check out my site" — real takes like "I've been taking the wrong magnesium for 2 years" → thread → quiz CTA. You're the first user. Your story is the marketing.</div>
-        <div class="rev-potential">D's 6K followers → first 500 visitors</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-icon">🧵</div>
-        <div class="rev-phase">HIGH INTENT · UNDERRATED</div>
-        <div class="rev-name">Reddit</div>
-        <div class="rev-desc">Be genuinely helpful in r/CanadianFitness (95K), r/Supplements (400K), r/PersonalFinanceCanada (700K). Answer questions. Become the knowledgeable person. Link only when directly relevant.</div>
-        <div class="rev-potential">200–500 high-intent visitors/mo</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-icon">🎬</div>
-        <div class="rev-phase">VOLUME PLAY · 90-DAY EFFORT</div>
-        <div class="rev-name">TikTok / Reels</div>
-        <div class="rev-desc">Supplement education is massive on short-form. "What I take and why," myth-busting, "the only supplement most Canadians actually need" (Vitamin D hook). Phone + good lighting. 3x/week for 90 days.</div>
-        <div class="rev-potential">1 viral video = 5–50K impressions</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-icon">🗣️</div>
-        <div class="rev-phase">TRUST BUILDER</div>
-        <div class="rev-name">Calgary Fitness Community</div>
-        <div class="rev-desc">CrossFit boxes, hockey gyms, run clubs. Offer to do a free "supplement stack audit" talk. Hand out cards with the quiz URL. Local word-of-mouth converts at 3x online traffic.</div>
-        <div class="rev-potential">50–200 high-trust visitors/mo</div>
-      </div>
+    <!-- ─── PHASE 2: SEO ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--amber);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 2</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">SEO <span style="font-size:14px;font-weight:500;color:var(--muted);">Month 2–6 · compounding forever</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">Canadian supplement searches are dramatically less competitive than US. A mid-DR site (DR 20–30) can rank page 1 for "best magnesium supplement Canada" — a search that would require DR 60+ to rank in the US. The window is open. Own it before a well-funded competitor notices.</p>
+
+    <!-- Technical SEO -->
+    <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px;">Technical SEO — one-time setup</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;">
+      <div class="moat-card"><div class="moat-icon">⚡</div><div class="moat-title">Core Web Vitals</div><div class="moat-desc">Your current HTML-only quiz scores near-perfect on CWV. Keep it. Google uses page speed as a ranking factor. Never add heavy JS frameworks to the main content pages.</div></div>
+      <div class="moat-card"><div class="moat-icon">🗺️</div><div class="moat-title">XML sitemap + robots.txt</div><div class="moat-desc">Submit sitemap.xml to Google Search Console and Bing Webmaster Tools on day 1. Ensures all pages are crawled and indexed quickly.</div></div>
+      <div class="moat-card"><div class="moat-icon">📋</div><div class="moat-title">Schema markup</div><div class="moat-desc">Add Article schema to blog posts, FAQ schema to question sections, Product schema to supplement reviews. Schema wins rich snippets = higher CTR from same position.</div></div>
+      <div class="moat-card"><div class="moat-icon">🔗</div><div class="moat-title">Internal linking</div><div class="moat-desc">Every article should link to 2–3 other articles + the quiz. This distributes page authority across the site and keeps users in the funnel longer.</div></div>
     </div>
 
-    <!-- Phase 2: SEO -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:6px;">Phase 2 — SEO <span style="font-size:13px;font-weight:500;color:var(--muted);">Month 2–6, compounding forever</span></h3>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Canadian supplement searches are dramatically less competitive than US. Own this niche before anyone notices.</p>
+    <!-- Keyword strategy -->
+    <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px;">Keyword clusters to own</div>
     <div class="econ-wrap" style="margin-bottom:16px;">
       <table class="econ-table">
         <thead>
-          <tr>
-            <th>ARTICLE TARGET</th>
-            <th>INTENT</th>
-            <th>EST. CA SEARCHES/MO</th>
-          </tr>
+          <tr><th>KEYWORD</th><th>INTENT</th><th>EST. CA SEARCHES/MO</th><th>DIFFICULTY</th></tr>
         </thead>
         <tbody>
-          <tr><td class="metric">Best magnesium supplement Canada</td><td>Commercial</td><td class="m12">~1,200</td></tr>
-          <tr><td class="metric">Vitamin D dosage Canada winter</td><td>Informational</td><td class="m12">~2,400</td></tr>
-          <tr><td class="metric">Creatine monohydrate Canada</td><td>Commercial</td><td class="m12">~800</td></tr>
-          <tr><td class="metric">Best supplements for energy Canada</td><td>Commercial</td><td class="m12">~900</td></tr>
-          <tr><td class="metric">iHerb vs Amazon Canada supplements</td><td>Comparison</td><td class="m12">~600</td></tr>
-          <tr><td class="metric">Supplement stack for men Canada</td><td>Commercial</td><td class="m12">~300</td></tr>
+          <tr><td class="metric">Best magnesium supplement Canada</td><td>Commercial</td><td class="m12">~1,200</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Vitamin D dosage Canada winter</td><td>Informational</td><td class="m12">~2,400</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Best supplements for energy Canada</td><td>Commercial</td><td class="m12">~900</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Creatine monohydrate Canada</td><td>Commercial</td><td class="m12">~800</td><td style="color:var(--amber);font-size:13px;">Medium</td></tr>
+          <tr><td class="metric">iHerb vs Amazon Canada supplements</td><td>Comparison</td><td class="m12">~600</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Ashwagandha Canada review</td><td>Commercial</td><td class="m12">~400</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Supplement stack for men Canada</td><td>Commercial</td><td class="m12">~300</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Best omega 3 supplement Canada</td><td>Commercial</td><td class="m12">~700</td><td style="color:var(--green);font-size:13px;">Low</td></tr>
+          <tr><td class="metric">Collagen supplement Canada</td><td>Commercial</td><td class="m12">~1,100</td><td style="color:var(--amber);font-size:13px;">Medium</td></tr>
+          <tr><td class="metric">Magnesium glycinate vs oxide Canada</td><td>Informational</td><td class="m12">~350</td><td style="color:var(--green);font-size:13px;">Very Low</td></tr>
+          <tr><td class="metric">NPN Canada supplements explained</td><td>Informational</td><td class="m12">~200</td><td style="color:var(--green);font-size:13px;">Very Low</td></tr>
+          <tr><td class="metric">Supplement quiz Canada</td><td>Navigational</td><td class="m12">~150</td><td style="color:var(--green);font-size:13px;">Low — own this</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:48px;">Each article should be the best resource on that topic — not thin AI content. Include the quiz as a CTA at the end. 12 solid articles at month 12 = 5–8K organic monthly visitors with purchase intent.</p>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:32px;">Total addressable organic traffic from these 12 keywords alone: ~9,200 searches/month. At a 30% CTR for position 1 and 20% quiz conversion = 552 quiz completions/month purely from SEO.</p>
 
-    <!-- Phase 3: Paid -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:6px;">Phase 3 — Paid Distribution <span style="font-size:13px;font-weight:500;color:var(--muted);">Month 4+, only after organic works</span></h3>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Don't touch paid until you have 100+ organic quiz completions and a known affiliate conversion rate.</p>
-    <div class="why-list" style="margin-bottom:48px;">
+    <!-- Content calendar -->
+    <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px;">12-month content calendar</div>
+    <div class="econ-wrap" style="margin-bottom:16px;">
+      <table class="econ-table">
+        <thead><tr><th>MONTH</th><th>ARTICLE</th><th>TARGET KEYWORD</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">Month 1</td><td>Why most Canadians are Vitamin D deficient (and what to do about it)</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">vitamin d dosage canada winter</td></tr>
+          <tr><td class="metric">Month 1</td><td>Magnesium glycinate vs oxide vs citrate: which form actually works</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">magnesium glycinate vs oxide canada</td></tr>
+          <tr><td class="metric">Month 2</td><td>The best magnesium supplement you can buy in Canada in 2025</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">best magnesium supplement canada</td></tr>
+          <tr><td class="metric">Month 2</td><td>iHerb vs Amazon.ca: where to buy supplements in Canada (honest comparison)</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">iherb vs amazon canada supplements</td></tr>
+          <tr><td class="metric">Month 3</td><td>The complete guide to creatine monohydrate in Canada</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">creatine monohydrate canada</td></tr>
+          <tr><td class="metric">Month 3</td><td>Best supplements for energy: what works and what's a scam</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">best supplements for energy canada</td></tr>
+          <tr><td class="metric">Month 4</td><td>The $50/month supplement stack that actually moves the needle</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">supplement stack for men canada</td></tr>
+          <tr><td class="metric">Month 4</td><td>Best omega-3 supplement in Canada: what to look for and what to avoid</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">best omega 3 supplement canada</td></tr>
+          <tr><td class="metric">Month 5</td><td>Ashwagandha in Canada: does it work, which form, which brand</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">ashwagandha canada review</td></tr>
+          <tr><td class="metric">Month 5</td><td>What is an NPN number and why it matters when buying supplements in Canada</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">npn canada supplements</td></tr>
+          <tr><td class="metric">Month 6</td><td>Best collagen supplement in Canada: marine vs bovine, what actually absorbs</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">collagen supplement canada</td></tr>
+          <tr><td class="metric">Month 6</td><td>The complete supplement guide for Canadian athletes</td><td style="font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;">supplement stack canada athlete</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Article anatomy -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px;margin-bottom:16px;">
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;">Anatomy of a high-converting article</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">1.</span><span style="color:var(--muted);">H1 includes the exact keyword. Meta description under 155 chars with a benefit hook.</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">2.</span><span style="color:var(--muted);">Intro answers the question in the first 100 words — Google rewards this, users don't bounce.</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">3.</span><span style="color:var(--muted);">H2/H3 structure maps to related search queries (e.g. "types of magnesium" → "magnesium glycinate dosage").</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">4.</span><span style="color:var(--muted);">Personal experience or Canadian-specific data woven in. Not just facts — your opinion. This is what separates you from generic AI content.</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">5.</span><span style="color:var(--muted);">Affiliate product links presented as recommendations, not ads. "I personally use X, here's why, here's the price." Transparent = trusted.</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">6.</span><span style="color:var(--muted);">CTA at the end: "Not sure what's right for your situation? Take our 2-minute quiz →"</span></div>
+        <div style="display:flex;gap:10px;font-size:13px;"><span style="color:var(--green);font-family:'JetBrains Mono',monospace;flex-shrink:0;">7.</span><span style="color:var(--muted);">FAQ section with 5–8 questions using exact phrasing from "People Also Ask" in Google results. Each FAQ = a mini featured-snippet opportunity.</span></div>
+      </div>
+    </div>
+
+    <!-- Link building -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px;margin-bottom:56px;">
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;">Link building — 5 backlinks in month 1</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">Domain authority matters for ranking. You need ~DR 15–20 to rank for low-competition Canadian keywords. The fastest ethical path:<br><br>
+      <strong style="color:var(--text);">1. HARO (Help a Reporter Out):</strong> Sign up free. Journalists query experts on health/wellness topics weekly. One good quote in a Canadian publication = DR 40–70 backlink.<br>
+      <strong style="color:var(--text);">2. Guest posts:</strong> Write a genuine guest article for 2–3 Canadian fitness blogs (Muscle &amp; Fitness Canada, Optimyz, Canadian Running). One article = backlink + referral traffic.<br>
+      <strong style="color:var(--text);">3. Resource page links:</strong> Email naturopath clinics and Calgary fitness studios: "I built a free supplement quiz for Canadians — would you add it to your resources page?" Many will.<br>
+      <strong style="color:var(--text);">4. Podcast appearances:</strong> Canadian health podcasts are hungry for knowledgeable guests. "Supplement misinformation in Canada" is a ready-made episode angle. One podcast = backlink + audience reach.</div>
+    </div>
+
+    <!-- ─── PHASE 3: EMAIL ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--purple);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 3</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">Email <span style="font-size:14px;font-weight:500;color:var(--muted);">Month 2+ · the only owned channel that compounds</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">Email converts at 3–5x social traffic for affiliate products. A list of 1,000 engaged subscribers in the supplement space is worth more than 10,000 social followers. Every quiz completion is a potential subscriber.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:56px;">
+      <div class="rev-card">
+        <div class="rev-icon">📩</div>
+        <div class="rev-name">Welcome sequence (5 emails)</div>
+        <div class="rev-desc"><strong style="color:var(--text);">Email 1 (instant):</strong> Your personalized protocol — delivered beautifully.<br><br><strong style="color:var(--text);">Email 2 (day 3):</strong> "The one supplement most Canadians are missing." (Vitamin D deep-dive. Builds trust.)<br><br><strong style="color:var(--text);">Email 3 (day 7):</strong> "How to actually tell if a supplement is working." (Retention + trust.)<br><br><strong style="color:var(--text);">Email 4 (day 14):</strong> "Where I buy supplements in Canada and why." (Soft affiliate intro.)<br><br><strong style="color:var(--text);">Email 5 (day 21):</strong> "My stack — updated." (Personal story, links to quiz for re-take.)</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-icon">📅</div>
+        <div class="rev-name">Ongoing newsletter cadence</div>
+        <div class="rev-desc"><strong style="color:var(--text);">Format:</strong> Biweekly. Under 500 words. One thing that's interesting + one recommendation + one link.<br><br><strong style="color:var(--text);">Topics that convert:</strong> New research on supplements you already recommend. Seasonal angles (Vitamin D reminder every October). "My stack update" posts. Product comparisons when a new brand enters Canada.<br><br><strong style="color:var(--text);">Monetization:</strong> Affiliate links in every newsletter (natural, not forced). At 1,000 subscribers, a single newsletter send = $150–400 in affiliate revenue.</div>
+      </div>
+    </div>
+
+    <!-- ─── PHASE 4: PAID ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--amber);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 4</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">Paid Distribution <span style="font-size:14px;font-weight:500;color:var(--muted);">Month 4+ · only after organic validates</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">Don't touch paid until you have: (1) 100+ organic quiz completions, (2) a measured affiliate conversion rate, (3) a known email opt-in rate. Without these numbers you're flying blind. Affiliate margins (~12%) leave thin room for a wasted CAC.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:56px;">
       <div class="why-item">
         <div class="why-emoji">🎯</div>
         <div class="why-body">
           <div class="why-title">Meta retargeting — not cold acquisition</div>
-          <div class="why-desc">Retarget website visitors with "Complete your supplement stack" ads. $5–10/day. You're not buying cold traffic — you're closing people who already showed intent.</div>
+          <div class="why-desc">Create a custom audience of everyone who visited the site but didn't complete the quiz. Run a single ad: "Find out exactly what supplements you need in 2 minutes." $5–10/day. You're closing people who already showed intent — CPCs are low, conversion rates are high. This is not a brand awareness play.</div>
         </div>
       </div>
       <div class="why-item">
         <div class="why-emoji">🔍</div>
         <div class="why-body">
           <div class="why-title">Google Search — bottom-of-funnel only</div>
-          <div class="why-desc">Bid on keywords like "buy magnesium glycinate Canada" — someone already decided, just needs pointing. Converts 5–10x vs. awareness keywords. Avoid broad match.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sponsorship GTM -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:6px;">Phase 4 — Sponsorship Outreach <span style="font-size:13px;font-weight:500;color:var(--muted);">Month 6+ · 5K visitors threshold</span></h3>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">The pitch: "Our audience self-selects as supplement buyers — they just completed a personalized stack quiz. We know their goals, diet, and budget."</p>
-    <div class="why-list" style="margin-bottom:48px;">
-      <div class="why-item">
-        <div class="why-emoji">🍁</div>
-        <div class="why-body">
-          <div class="why-title">Canadian brands to approach first</div>
-          <div class="why-desc">Natural Factors (BC), Progressive Nutritional, Organika (BC), Vega (now Danone). Pitch a "founding partner" package: $500–$1K/month for featured placement + 1 article + newsletter spot.</div>
+          <div class="why-desc">Bid only on transactional keywords: "buy magnesium glycinate Canada," "best creatine Canada buy," "where to buy ashwagandha Canada." These people are ready to purchase — you're just intercepting with a better recommendation. Avoid broad match. Use exact and phrase match only. $10–20/day budget to test.</div>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-emoji">🌐</div>
+        <div class="why-emoji">📧</div>
         <div class="why-body">
-          <div class="why-title">Direct iHerb relationship</div>
-          <div class="why-desc">Once you're driving consistent volume, negotiate directly with iHerb for a higher affiliate rate (standard is 8%, direct deals can reach 15–20%) and co-marketing budget.</div>
+          <div class="why-title">Email list lookalike audiences</div>
+          <div class="why-desc">Once you have 500+ email subscribers, upload to Meta and create a lookalike audience. These are statistically similar to people who completed the quiz and opted in — the highest-quality cold audience you can target. CAC drops 40–60% vs. interest-based targeting.</div>
         </div>
       </div>
     </div>
 
-    <!-- What NOT to do -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">⚠️ What NOT To Do</h3>
-    <div class="rev-grid" style="margin-bottom:48px;">
+    <!-- ─── PHASE 5: SPONSORSHIPS ─── -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--green);color:#0a0a0e;font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:6px;">PHASE 5</div>
+      <h3 style="font-size:20px;font-weight:800;letter-spacing:-0.5px;">Sponsorship &amp; Partnerships <span style="font-size:14px;font-weight:500;color:var(--muted);">Month 6+ · 5K visitors threshold</span></h3>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">The sponsorship pitch is uniquely powerful for this business: <em style="color:var(--text)">"Our audience self-selects as active supplement buyers — they just completed a personalized stack quiz. We know their goals, diet, and budget before they ever click your product."</em> No other media property can say that.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;">
+      <div class="rev-card">
+        <div class="rev-icon">🍁</div>
+        <div class="rev-name">Canadian brands — approach first</div>
+        <div class="rev-desc"><strong style="color:var(--text)">Natural Factors</strong> (BC) — Canada's largest supplement manufacturer. Large marketing budget, Canadian pride angle.<br><br><strong style="color:var(--text)">Progressive Nutritional</strong> — Canadian brand, sells through most Canadian retailers.<br><br><strong style="color:var(--text)">Organika</strong> (BC) — collagen, adaptogens, strong social following.<br><br><strong style="color:var(--text)">Vega</strong> (Danone) — plant protein, Canadian heritage story.<br><br><strong style="color:var(--text)">BodyEnergy Club</strong> — BC-based retailer, looking for affiliate/content partners.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-icon">📦</div>
+        <div class="rev-name">Sponsorship packages</div>
+        <div class="rev-desc"><strong style="color:var(--text)">Founding Partner — $500/mo:</strong> Featured product in quiz results, 1 dedicated article, newsletter mention, social post.<br><br><strong style="color:var(--text)">Growth Partner — $1,500/mo:</strong> Above + banner on relevant category pages, quarterly "brand review" article, email blast to full list.<br><br><strong style="color:var(--text)">Title Sponsor — $3,000/mo:</strong> "Powered by [Brand]" on quiz, all of the above + co-created content series.<br><br>Don't discount. Scarcity is real — only 1 title sponsor, 2 growth partners.</div>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px;margin-bottom:56px;">
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;">The iHerb direct relationship play</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">iHerb's standard affiliate rate is 8%. Brands that drive consistent volume (>$10K/month in referred sales) can negotiate directly for 15–20% rates and co-marketing budgets. At month 12 with 300 affiliate conversions at $120 AOV, you're referring $36K/month in iHerb sales. That's significant leverage to negotiate a direct deal worth an extra $2,500–4,000/month in commission alone.</div>
+    </div>
+
+    <!-- WHAT NOT TO DO -->
+    <div style="font-size:18px;font-weight:800;margin-bottom:16px;letter-spacing:-0.5px;">⚠️ Anti-patterns — what kills this business</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:56px;">
       <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
-        <div class="rev-name" style="color:#f87171;">Don't spread across every platform</div>
-        <div class="rev-desc">Pick one short-form (TikTok or Reels) and one long-form (X or YouTube). Go deep before expanding. Spreading thin = mediocre everywhere.</div>
+        <div class="rev-name" style="color:#f87171;">Spreading across every platform at once</div>
+        <div class="rev-desc">Pick one short-form (TikTok or Reels) and one long-form (X threads or YouTube). Master those two before expanding. Spreading thin = mediocre everywhere = no algorithm traction anywhere.</div>
       </div>
       <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
-        <div class="rev-name" style="color:#f87171;">Don't publish AI slop for SEO</div>
-        <div class="rev-desc">Google's helpful content update nuked thin affiliate sites. The edge is being genuinely better — real experience, Canadian specifics, honest opinions.</div>
+        <div class="rev-name" style="color:#f87171;">Publishing AI-generated SEO filler</div>
+        <div class="rev-desc">Google's helpful content update (2023–2024) nuked thin affiliate sites. The edge is being genuinely better — real experience, Canadian-specific context, honest opinions. One great article beats ten mediocre ones.</div>
       </div>
       <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
-        <div class="rev-name" style="color:#f87171;">Don't chase virality</div>
-        <div class="rev-desc">A viral post sends 50K people who bounce. Ten good SEO articles send 500 people/month who buy. The model rewards compounding, not spikes.</div>
+        <div class="rev-name" style="color:#f87171;">Optimizing for virality over compounding</div>
+        <div class="rev-desc">A viral post sends 50K people who bounce. Ten good SEO articles send 500 people/month who buy, every month, forever. The model rewards consistent compounding, not spikes. Don't chase trending topics unless they're genuinely relevant.</div>
       </div>
       <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
-        <div class="rev-name" style="color:#f87171;">Don't pitch sponsorships too early</div>
-        <div class="rev-desc">Reaching out at &lt;2K visitors trains brands to think your audience is small. Wait until the number is real. One good deal at 5K &gt; five rejections at 500.</div>
+        <div class="rev-name" style="color:#f87171;">Pitching sponsorships before leverage</div>
+        <div class="rev-desc">Reaching out at &lt;2K visitors trains brands to think your audience is small. One good deal at 5K visitors outperforms five rejections at 500. The ask gets dramatically easier as the number grows — wait.</div>
+      </div>
+      <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
+        <div class="rev-name" style="color:#f87171;">Recommending supplements you haven't researched</div>
+        <div class="rev-desc">One credibility-destroying recommendation undoes 6 months of trust building. Only recommend what you'd take yourself. If you're unsure, consult a naturopath before publishing. This is also a legal exposure risk in Canada under the Competition Act.</div>
+      </div>
+      <div class="rev-card" style="border-color: rgba(248,113,113,0.2);">
+        <div class="rev-name" style="color:#f87171;">Running paid traffic before the funnel converts</div>
+        <div class="rev-desc">If organic quiz completion rate is below 40%, fix the quiz before spending on ads. You'll burn money amplifying a broken funnel. Paid traffic makes the funnel bigger — it doesn't make it better.</div>
       </div>
     </div>
 
-    <!-- 90-day scorecard -->
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">📋 90-Day Scorecard</h3>
-    <div class="econ-wrap">
+    <!-- 90-DAY SCORECARD -->
+    <div style="font-size:18px;font-weight:800;margin-bottom:16px;letter-spacing:-0.5px;">📋 90-Day Scorecard</div>
+    <div class="econ-wrap" style="margin-bottom:12px;">
       <table class="econ-table">
-        <thead>
-          <tr><th>METRIC</th><th>TARGET BY DAY 90</th></tr>
-        </thead>
+        <thead><tr><th>METRIC</th><th>TARGET BY DAY 30</th><th>TARGET BY DAY 90</th></tr></thead>
         <tbody>
-          <tr><td class="metric">Domain + real site live</td><td style="color:var(--green);font-weight:600;">✓ Done</td></tr>
-          <tr><td class="metric">Affiliate programs wired</td><td>3+ programs</td></tr>
-          <tr><td class="metric">Quiz completions</td><td>200+</td></tr>
-          <tr><td class="metric">Affiliate clicks tracked</td><td>100+</td></tr>
-          <tr><td class="metric">Email subscribers</td><td>50+</td></tr>
-          <tr><td class="metric">SEO articles published</td><td>6</td></tr>
-          <tr><td class="metric">Organic monthly visitors</td><td>1,000+</td></tr>
-          <tr><td class="metric">First affiliate revenue</td><td class="m12">&gt; $0</td></tr>
+          <tr><td class="metric">Real domain + deployed</td><td style="color:var(--green);font-weight:600;">✓</td><td style="color:var(--green);">✓</td></tr>
+          <tr><td class="metric">Affiliate programs wired</td><td>2 programs</td><td class="m12">4+ programs</td></tr>
+          <tr><td class="metric">Email capture live</td><td>✓</td><td style="color:var(--green);">✓</td></tr>
+          <tr><td class="metric">Analytics + conversion tracking</td><td>✓</td><td style="color:var(--green);">✓</td></tr>
+          <tr><td class="metric">Quiz completions</td><td>50+</td><td class="m12">200+</td></tr>
+          <tr><td class="metric">Email subscribers</td><td>20+</td><td class="m12">50+</td></tr>
+          <tr><td class="metric">X posts about the topic</td><td>10+</td><td class="m12">30+</td></tr>
+          <tr><td class="metric">Reddit helpful comments</td><td>20+</td><td class="m12">60+</td></tr>
+          <tr><td class="metric">SEO articles published</td><td>2</td><td class="m12">6</td></tr>
+          <tr><td class="metric">Google Search Console impressions</td><td>500+</td><td class="m12">5,000+</td></tr>
+          <tr><td class="metric">Organic monthly visitors</td><td>200+</td><td class="m12">1,000+</td></tr>
+          <tr><td class="metric">Affiliate clicks tracked</td><td>30+</td><td class="m12">100+</td></tr>
+          <tr><td class="metric">First affiliate revenue</td><td>—</td><td class="m12" style="color:var(--green);font-weight:700;">&gt; $0</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Day 90 goal isn't revenue — it's validating that the funnel converts and content is gaining traction. Everything after is scaling what works.</p>
+    <p style="font-size:13px;color:var(--muted);">Day 90 goal is not revenue — it's proving the funnel converts and that content gains organic traction. Once both are validated, everything after is scaling what already works.</p>
   </div>
 </section>
 
