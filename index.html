@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>StackSmart — Find Your Supplement Stack</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0a0a0e;
+    color: #f0f0f2;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root { min-height: 100vh; }
+
+  .screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* Progress */
+  .progress-bar-wrap { margin-bottom: 32px; }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #52525b; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .progress-track { height: 3px; background: #1f1f27; border-radius: 99px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #34d399; border-radius: 99px; transition: width 0.5s cubic-bezier(.4,0,.2,1); }
+
+  /* Question */
+  .q-emoji { font-size: 40px; margin-bottom: 16px; }
+  .q-text { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; line-height: 1.2; }
+  .q-sub { font-size: 13px; color: #71717a; margin-bottom: 28px; margin-top: 4px; }
+
+  /* Options */
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option-btn {
+    display: flex; align-items: center; gap: 14px;
+    background: #111117; border: 1.5px solid #1f1f27;
+    border-radius: 14px; padding: 14px 18px;
+    cursor: pointer; text-align: left;
+    transition: all 0.12s ease;
+    color: #a1a1aa;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    width: 100%;
+  }
+  .option-btn:hover { border-color: #3f3f46; color: #f0f0f2; }
+  .option-btn.selected { background: rgba(52,211,153,0.08); border-color: #34d399; color: #f0f0f2; }
+  .option-emoji { font-size: 20px; flex-shrink: 0; }
+  .option-label { flex: 1; }
+  .option-check { color: #34d399; font-size: 16px; margin-left: auto; }
+
+  /* Continue button */
+  .btn-continue {
+    margin-top: 20px; width: 100%;
+    background: #34d399; color: #0a0a0e;
+    border: none; border-radius: 14px;
+    padding: 15px; font-size: 14px; font-weight: 700;
+    cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.15s;
+    letter-spacing: 0.2px;
+  }
+  .btn-continue:hover { background: #6ee7b7; }
+
+  /* Results screen */
+  .results-header { text-align: center; margin-bottom: 36px; }
+  .results-badge {
+    display: inline-block;
+    background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3);
+    color: #34d399; font-size: 11px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px; padding: 5px 12px; border-radius: 99px; margin-bottom: 16px;
+  }
+  .results-title { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+  .results-sub { font-size: 14px; color: #71717a; line-height: 1.6; }
+
+  .rec-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .rec-card {
+    background: #111117; border: 1.5px solid #1f1f27;
+    border-radius: 16px; padding: 18px 18px 18px 16px;
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: border-color 0.15s;
+  }
+  .rec-card:hover { border-color: #2f2f38; }
+  .rec-num {
+    width: 30px; height: 30px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px;
+    color: #0a0a0e;
+  }
+  .rec-body { flex: 1; min-width: 0; }
+  .rec-name { font-size: 15px; font-weight: 700; color: #f0f0f2; margin-bottom: 5px; }
+  .rec-why { font-size: 13px; color: #71717a; line-height: 1.6; margin-bottom: 10px; }
+  .rec-dose {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #1a1a22; border-radius: 8px;
+    padding: 4px 10px; font-size: 11px;
+    font-family: 'JetBrains Mono', monospace; color: #a1a1aa;
+  }
+  .rec-dose-label { color: #3f3f46; }
+
+  .tip-card {
+    background: #111117; border: 1.5px solid #1f1f27;
+    border-radius: 16px; padding: 18px; margin-bottom: 20px;
+  }
+  .tip-title { font-size: 14px; font-weight: 700; color: #f0f0f2; margin-bottom: 6px; }
+  .tip-text { font-size: 13px; color: #71717a; line-height: 1.6; }
+
+  .btn-retake {
+    width: 100%; background: #1a1a22; color: #a1a1aa;
+    border: 1.5px solid #1f1f27; border-radius: 14px;
+    padding: 14px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.15s;
+  }
+  .btn-retake:hover { background: #1f1f27; color: #f0f0f2; }
+
+  /* Hero */
+  .hero-screen {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 48px 16px; text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25);
+    color: #34d399; font-size: 11px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px; padding: 5px 14px; border-radius: 99px; margin-bottom: 24px;
+  }
+  .hero-title { font-size: 52px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 16px; }
+  .hero-title span { color: #34d399; }
+  .hero-sub { font-size: 16px; color: #71717a; max-width: 380px; line-height: 1.7; margin-bottom: 36px; }
+  .btn-start {
+    background: #34d399; color: #0a0a0e;
+    border: none; border-radius: 16px;
+    padding: 16px 40px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.15s; letter-spacing: 0.2px;
+  }
+  .btn-start:hover { background: #6ee7b7; }
+  .hero-note { margin-top: 16px; font-size: 12px; color: #3f3f46; font-family: 'JetBrains Mono', monospace; }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 36px; }
+    .q-text { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React;
+
+const QUESTIONS = [
+  {
+    id: 'goal',
+    question: "What's your primary goal?",
+    emoji: '🎯',
+    options: [
+      { value: 'energy', label: 'More Energy & Focus', emoji: '⚡' },
+      { value: 'sleep', label: 'Better Sleep & Recovery', emoji: '😴' },
+      { value: 'muscle', label: 'Build Muscle & Strength', emoji: '💪' },
+      { value: 'stress', label: 'Reduce Stress & Anxiety', emoji: '🧘' },
+      { value: 'immune', label: 'Immune & General Health', emoji: '🛡️' },
+      { value: 'weight', label: 'Weight Management', emoji: '⚖️' },
+    ],
+  },
+  {
+    id: 'lifestyle',
+    question: "How would you describe your lifestyle?",
+    emoji: '🏃',
+    options: [
+      { value: 'athlete', label: 'Athletic (5+ workouts/week)', emoji: '🏋️' },
+      { value: 'active', label: 'Active (2–4 workouts/week)', emoji: '🚴' },
+      { value: 'desk', label: 'Desk job, mostly sedentary', emoji: '💻' },
+      { value: 'busy', label: 'Always on the go, high stress', emoji: '🔥' },
+      { value: 'outdoor', label: 'Outdoor / physical work', emoji: '🌲' },
+    ],
+  },
+  {
+    id: 'diet',
+    question: "What best describes your diet?",
+    emoji: '🥗',
+    options: [
+      { value: 'omnivore', label: 'Omnivore (eat everything)', emoji: '🍖' },
+      { value: 'vegan', label: 'Vegan', emoji: '🌱' },
+      { value: 'vegetarian', label: 'Vegetarian', emoji: '🥦' },
+      { value: 'keto', label: 'Keto / Low-carb', emoji: '🥑' },
+      { value: 'paleo', label: 'Paleo / Whole foods', emoji: '🍠' },
+    ],
+  },
+  {
+    id: 'issues',
+    question: "Any specific concerns?",
+    emoji: '🩺',
+    multi: true,
+    options: [
+      { value: 'brain_fog', label: 'Brain fog / poor focus', emoji: '🌫️' },
+      { value: 'low_energy', label: 'Low energy / fatigue', emoji: '🔋' },
+      { value: 'poor_sleep', label: 'Trouble sleeping', emoji: '🌙' },
+      { value: 'joint_pain', label: 'Joint pain / inflammation', emoji: '🦴' },
+      { value: 'gut', label: 'Gut / digestion issues', emoji: '🫃' },
+      { value: 'mood', label: 'Mood / anxiety', emoji: '💭' },
+    ],
+  },
+  {
+    id: 'budget',
+    question: "Monthly supplement budget?",
+    emoji: '💰',
+    options: [
+      { value: 'low', label: 'Under $50/mo', emoji: '💵' },
+      { value: 'mid', label: '$50–$150/mo', emoji: '💳' },
+      { value: 'high', label: '$150+/mo', emoji: '💎' },
+    ],
+  },
+];
+
+const NUM_COLORS = ['#34d399','#60a5fa','#a78bfa','#fbbf24','#f87171'];
+
+function getRecommendations(answers) {
+  const recs = [];
+  const issues = answers.issues || [];
+
+  if (answers.goal === 'muscle' || answers.lifestyle === 'athlete' || answers.lifestyle === 'active') {
+    recs.push({ name: 'Creatine Monohydrate', why: 'Most studied performance supplement ever. Increases strength, power, and muscle gain. Non-negotiable if you train.', dose: '5g/day, any time' });
+  }
+  if (answers.goal === 'energy' || issues.includes('low_energy') || issues.includes('brain_fog')) {
+    recs.push({ name: 'Magnesium Glycinate', why: 'Most Canadians are deficient. One supplement that fixes energy, sleep, and focus simultaneously.', dose: '200–400mg before bed' });
+    recs.push({ name: 'Vitamin D3 + K2', why: 'Calgary gets <4 months of adequate sun. Almost certain to be deficient Oct–Apr. Critical for energy and immunity.', dose: '2000–5000 IU D3 + 100mcg K2 daily' });
+  }
+  if (answers.goal === 'sleep' || issues.includes('poor_sleep')) {
+    recs.push({ name: 'Magnesium Glycinate', why: 'Calms the nervous system, improves sleep quality without grogginess or dependency.', dose: '400mg, 1hr before bed' });
+    recs.push({ name: 'L-Theanine', why: 'Reduces sleep latency — time to fall asleep. No side effects, no dependency.', dose: '200mg at bedtime' });
+  }
+  if (answers.goal === 'stress' || issues.includes('mood')) {
+    recs.push({ name: 'Ashwagandha (KSM-66)', why: 'Clinically studied adaptogen. Lowers cortisol, improves stress resilience. Effects build over 8 weeks.', dose: '300–600mg daily with food' });
+    recs.push({ name: 'Omega-3 (EPA/DHA)', why: 'Reduces inflammation and supports mood regulation. Critical for brain health.', dose: '2g EPA+DHA daily with food' });
+  }
+  if (answers.goal === 'immune') {
+    recs.push({ name: 'Vitamin D3 + K2', why: 'Immune system cornerstone. Most impactful single supplement for Canadians.', dose: '2000–5000 IU daily' });
+    recs.push({ name: 'Zinc Bisglycinate', why: 'Immune function, wound healing, testosterone support. Commonly low in Canadian diets.', dose: '15–30mg daily with food' });
+  }
+  if (answers.diet === 'vegan' || answers.diet === 'vegetarian') {
+    recs.push({ name: 'Vitamin B12 (Methylcobalamin)', why: 'Critical if plant-based. Deficiency causes irreversible nerve damage and fatigue over time.', dose: '1000mcg daily' });
+    recs.push({ name: 'Algae Omega-3', why: 'Same EPA/DHA as fish oil from the actual source — algae. No fishy taste.', dose: '500–1000mg EPA+DHA daily' });
+  }
+  if (issues.includes('joint_pain')) {
+    recs.push({ name: 'Collagen Peptides + Vitamin C', why: 'Supports joint repair and cartilage synthesis. Take 30min before training for maximum absorption.', dose: '10–15g collagen + 50mg Vit C' });
+  }
+  if (issues.includes('gut')) {
+    recs.push({ name: 'Multi-strain Probiotic', why: 'Restores microbiome diversity. Look for 10B+ CFU with Lactobacillus and Bifidobacterium strains.', dose: 'Daily on empty stomach' });
+  }
+
+  // Baseline for low-budget — always useful
+  if (answers.budget === 'low' && recs.length === 0) {
+    recs.push({ name: 'Vitamin D3 + K2', why: 'Best ROI of any supplement for Canadians. Impacts energy, immunity, mood, and sleep.', dose: '2000–5000 IU daily' });
+    recs.push({ name: 'Magnesium Glycinate', why: 'Widely deficient mineral. Improves sleep, reduces anxiety, boosts energy.', dose: '200–400mg before bed' });
+  }
+
+  // Deduplicate
+  const seen = new Set();
+  return recs.filter(r => { if (seen.has(r.name)) return false; seen.add(r.name); return true; }).slice(0, 5);
+}
+
+function HeroScreen({ onStart }) {
+  return (
+    <div className="hero-screen">
+      <div style={{maxWidth: 480, width: '100%', textAlign:'center'}}>
+        <div className="hero-tag">FREE · 2 MINUTES · NO EMAIL REQUIRED</div>
+        <h1 className="hero-title">Your stack,<br/><span>actually curated.</span></h1>
+        <p className="hero-sub">5 questions. A personalized supplement protocol built around your goals, diet, and budget — not a upsell.</p>
+        <button className="btn-start" onClick={onStart}>Build My Stack →</button>
+        <div className="hero-note">Canada-first recommendations · Evidence-based only</div>
+      </div>
+    </div>
+  );
+}
+
+function QuizScreen({ onDone }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const q = QUESTIONS[step];
+  const progress = (step / QUESTIONS.length) * 100;
+
+  function select(value) {
+    if (q.multi) {
+      const prev = answers[q.id] || [];
+      const next = prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value];
+      setAnswers({ ...answers, [q.id]: next });
+    } else {
+      const updated = { ...answers, [q.id]: value };
+      setAnswers(updated);
+      if (step < QUESTIONS.length - 1) {
+        setTimeout(() => setStep(step + 1), 160);
+      } else {
+        setTimeout(() => onDone(updated), 160);
+      }
+    }
+  }
+
+  function isSelected(value) {
+    if (q.multi) return (answers[q.id] || []).includes(value);
+    return answers[q.id] === value;
+  }
+
+  function next() {
+    const updated = { ...answers };
+    if (!updated[q.id]) updated[q.id] = [];
+    if (step < QUESTIONS.length - 1) setStep(step + 1);
+    else onDone(updated);
+  }
+
+  return (
+    <div className="screen">
+      <div className="card">
+        <div className="progress-bar-wrap">
+          <div className="progress-meta">
+            <span>QUESTION {step + 1} OF {QUESTIONS.length}</span>
+            <span>{Math.round(progress)}%</span>
+          </div>
+          <div className="progress-track">
+            <div className="progress-fill" style={{width: progress + '%'}}/>
+          </div>
+        </div>
+
+        <div className="q-emoji">{q.emoji}</div>
+        <h2 className="q-text">{q.question}</h2>
+        {q.multi && <p className="q-sub">Select all that apply, or skip</p>}
+
+        <div className="options">
+          {q.options.map(opt => (
+            <button
+              key={opt.value}
+              className={'option-btn' + (isSelected(opt.value) ? ' selected' : '')}
+              onClick={() => select(opt.value)}
+            >
+              <span className="option-emoji">{opt.emoji}</span>
+              <span className="option-label">{opt.label}</span>
+              {isSelected(opt.value) && <span className="option-check">✓</span>}
+            </button>
+          ))}
+        </div>
+
+        {q.multi && (
+          <button className="btn-continue" onClick={next}>
+            {step < QUESTIONS.length - 1 ? 'Continue →' : 'Build My Stack →'}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ResultsScreen({ answers, onRetake }) {
+  const recs = getRecommendations(answers);
+
+  return (
+    <div className="screen">
+      <div className="card">
+        <div className="results-header">
+          <div className="results-badge">YOUR STACK IS READY</div>
+          <h1 className="results-title">Your Protocol</h1>
+          <p className="results-sub">Start with #1 and #2. Give them 6–8 weeks. Add more only when you feel a clear need.</p>
+        </div>
+
+        <div className="rec-list">
+          {recs.map((rec, i) => (
+            <div key={rec.name} className="rec-card">
+              <div className="rec-num" style={{background: NUM_COLORS[i]}}>{i + 1}</div>
+              <div className="rec-body">
+                <div className="rec-name">{rec.name}</div>
+                <div className="rec-why">{rec.why}</div>
+                <div className="rec-dose">
+                  <span className="rec-dose-label">DOSE</span>
+                  {rec.dose}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="tip-card">
+          <div className="tip-title">💡 The most common mistake</div>
+          <div className="tip-text">Buying 8 supplements at once. You won't know what's working. Stack slowly, evaluate honestly.</div>
+        </div>
+
+        <button className="btn-retake" onClick={onRetake}>← Retake Quiz</button>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [phase, setPhase] = useState('hero'); // hero | quiz | results
+  const [finalAnswers, setFinalAnswers] = useState(null);
+
+  if (phase === 'hero') return <HeroScreen onStart={() => setPhase('quiz')} />;
+  if (phase === 'quiz') return <QuizScreen onDone={(a) => { setFinalAnswers(a); setPhase('results'); }} />;
+  return <ResultsScreen answers={finalAnswers} onRetake={() => { setFinalAnswers(null); setPhase('hero'); }} />;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
