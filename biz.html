@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>StackSmart — Business Model</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0e;
+  --surface: #111117;
+  --border: #1f1f27;
+  --border-hover: #2f2f3a;
+  --text: #f0f0f2;
+  --muted: #71717a;
+  --faint: #3f3f46;
+  --green: #34d399;
+  --green-dim: rgba(52,211,153,0.1);
+  --green-border: rgba(52,211,153,0.25);
+  --blue: #60a5fa;
+  --blue-dim: rgba(96,165,250,0.1);
+  --blue-border: rgba(96,165,250,0.25);
+  --purple: #a78bfa;
+  --purple-dim: rgba(167,139,250,0.1);
+  --purple-border: rgba(167,139,250,0.25);
+  --amber: #fbbf24;
+  --amber-dim: rgba(251,191,36,0.1);
+  --amber-border: rgba(251,191,36,0.25);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10,10,14,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-weight: 800; font-size: 16px; letter-spacing: -0.5px; }
+.nav-logo span { color: var(--green); }
+.nav-links { display: flex; gap: 8px; }
+.nav-link {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  text-decoration: none; padding: 7px 14px; border-radius: 8px;
+  transition: all 0.15s;
+}
+.nav-link:hover { color: var(--text); background: var(--surface); }
+.nav-link.active { color: var(--text); background: var(--surface); }
+.nav-cta {
+  background: var(--green); color: #0a0a0e;
+  font-size: 13px; font-weight: 700;
+  padding: 8px 16px; border-radius: 8px;
+  text-decoration: none; transition: background 0.15s;
+}
+.nav-cta:hover { background: #6ee7b7; }
+
+/* LAYOUT */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
+
+/* SECTION LABELS */
+.label {
+  display: inline-flex; align-items: center; gap-8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 5px 12px; border-radius: 99px; margin-bottom: 20px;
+}
+.label-green { background: var(--green-dim); border: 1px solid var(--green-border); color: var(--green); }
+.label-blue  { background: var(--blue-dim);  border: 1px solid var(--blue-border);  color: var(--blue);  }
+.label-purple{ background: var(--purple-dim); border: 1px solid var(--purple-border); color: var(--purple); }
+.label-amber { background: var(--amber-dim); border: 1px solid var(--amber-border); color: var(--amber); }
+
+h2.section-title {
+  font-size: 36px; font-weight: 800; letter-spacing: -1px;
+  line-height: 1.1; margin-bottom: 12px;
+}
+p.section-sub {
+  font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* HERO */
+#hero { padding: 100px 0 80px; border-bottom: 1px solid var(--border); }
+.hero-eyebrow { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--green); letter-spacing: 1px; margin-bottom: 20px; }
+#hero h1 { font-size: 60px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; margin-bottom: 20px; }
+#hero h1 span { color: var(--green); }
+#hero p { font-size: 18px; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 40px; }
+.hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 600px; }
+.hero-stat {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 20px 22px;
+}
+.hero-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; color: var(--green); }
+.hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* THE MODEL — funnel */
+.funnel { display: flex; flex-direction: column; gap: 0; }
+.funnel-step {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.funnel-step:last-child { border-bottom: none; }
+.funnel-num {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace; color: var(--muted);
+}
+.funnel-body { flex: 1; }
+.funnel-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.funnel-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.funnel-arrow {
+  text-align: center; color: var(--faint); font-size: 18px;
+  padding: 4px 0;
+}
+
+/* REVENUE STREAMS */
+.rev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.rev-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 24px;
+  transition: border-color 0.15s;
+}
+.rev-card:hover { border-color: var(--border-hover); }
+.rev-icon { font-size: 28px; margin-bottom: 12px; }
+.rev-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.rev-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.rev-potential {
+  font-size: 12px; font-family: 'JetBrains Mono', monospace;
+  color: var(--green); background: var(--green-dim);
+  border: 1px solid var(--green-border);
+  padding: 4px 10px; border-radius: 6px; display: inline-block;
+}
+.rev-phase {
+  font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  color: var(--faint); margin-bottom: 8px;
+}
+
+/* UNIT ECONOMICS TABLE */
+.econ-table { width: 100%; border-collapse: collapse; }
+.econ-table th {
+  text-align: left; font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  color: var(--faint); letter-spacing: 0.5px; padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.econ-table td {
+  padding: 14px 16px; font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.econ-table tr:last-child td { border-bottom: none; }
+.econ-table tr:hover td { background: var(--surface); }
+.econ-table .metric { color: var(--muted); font-size: 13px; }
+.econ-table .m6 { font-weight: 600; }
+.econ-table .m12 { font-weight: 600; color: var(--green); }
+.econ-wrap {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+}
+
+/* ROADMAP */
+.roadmap { display: flex; flex-direction: column; gap: 0; }
+.rm-phase {
+  display: flex; gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rm-phase:last-child { border-bottom: none; }
+.rm-left { width: 120px; flex-shrink: 0; }
+.rm-period {
+  font-size: 12px; font-family: 'JetBrains Mono', monospace;
+  font-weight: 600; margin-bottom: 4px;
+}
+.rm-status {
+  font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  padding: 3px 8px; border-radius: 99px; display: inline-block;
+}
+.status-now { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+.status-soon { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+.status-later { background: var(--surface); color: var(--faint); border: 1px solid var(--border); }
+.rm-right { flex: 1; }
+.rm-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.rm-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.rm-items li { font-size: 14px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+.rm-items li::before { content: '—'; color: var(--faint); flex-shrink: 0; }
+
+/* MOAT */
+.moat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.moat-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 22px;
+}
+.moat-icon { font-size: 24px; margin-bottom: 10px; }
+.moat-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.moat-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* WHY NOW */
+.why-list { display: flex; flex-direction: column; gap: 16px; }
+.why-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 20px;
+}
+.why-emoji { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.why-body {}
+.why-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.why-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* CTA */
+#cta { text-align: center; padding: 100px 0; }
+#cta h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; }
+#cta p { font-size: 16px; color: var(--muted); max-width: 400px; margin: 0 auto 36px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--green); color: #0a0a0e;
+  font-weight: 700; font-size: 15px; font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 15px 36px; border-radius: 12px; border: none; cursor: pointer;
+  text-decoration: none; transition: background 0.15s;
+}
+.btn-primary:hover { background: #6ee7b7; }
+.btn-secondary {
+  background: transparent; color: var(--muted);
+  font-weight: 600; font-size: 15px; font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 15px 28px; border-radius: 12px; border: 1.5px solid var(--border);
+  cursor: pointer; text-decoration: none; transition: all 0.15s;
+}
+.btn-secondary:hover { border-color: var(--border-hover); color: var(--text); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px; text-align: center;
+  font-size: 12px; color: var(--faint);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  #hero h1 { font-size: 38px; }
+  h2.section-title { font-size: 28px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .rev-grid { grid-template-columns: 1fr; }
+  .moat-grid { grid-template-columns: 1fr; }
+  .rm-left { width: 80px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Stack<span>Smart</span></div>
+  <div class="nav-links">
+    <a href="#model" class="nav-link">The Model</a>
+    <a href="#revenue" class="nav-link">Revenue</a>
+    <a href="#roadmap" class="nav-link">Roadmap</a>
+  </div>
+  <a href="index.html" class="nav-cta">Try the Quiz →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-eyebrow">BUSINESS MODEL OVERVIEW</div>
+    <h1>The top of the<br/>supplement funnel.<span>.</span></h1>
+    <p>A quiz-powered recommendation engine that helps Canadians find the right supplements — monetized through affiliates and brand partnerships. No inventory. No manufacturing. Pure margin.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">$0</div>
+        <div class="hero-stat-label">Inventory risk</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">12%</div>
+        <div class="hero-stat-label">Avg affiliate rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">~$5k</div>
+        <div class="hero-stat-label">To launch v1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="model">
+  <div class="container">
+    <div class="label label-green">HOW IT WORKS</div>
+    <h2 class="section-title">Quiz → Protocol → Purchase</h2>
+    <p class="section-sub">A clean three-step funnel. We sit at the top — the most defensible position — and let brand partners handle fulfilment.</p>
+
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="funnel-num">01</div>
+        <div class="funnel-body">
+          <div class="funnel-title">User takes the 5-question quiz</div>
+          <div class="funnel-desc">Goals, lifestyle, diet, specific concerns, and budget. Takes under 2 minutes. No email required to get results (removes friction, builds trust).</div>
+        </div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-num">02</div>
+        <div class="funnel-body">
+          <div class="funnel-title">AI generates a personalized protocol</div>
+          <div class="funnel-desc">5 supplements ranked by priority — each with a plain-English "why" and exact dosage. Evidence-based, Canada-aware (Vitamin D for our winters, etc.). No upsells, no filler.</div>
+        </div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-num">03</div>
+        <div class="funnel-body">
+          <div class="funnel-title">User clicks through to buy</div>
+          <div class="funnel-desc">Each recommendation links to a vetted Canadian retailer (Popeye's, Natural Health Trends, iHerb.ca, Amazon.ca) via an affiliate link. We earn 8–15% on every order.</div>
+        </div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-num">04</div>
+        <div class="funnel-body">
+          <div class="funnel-title">Content compounds the flywheel</div>
+          <div class="funnel-desc">SEO articles ("best magnesium supplement Canada") rank and refer traffic organically. Every article is another affiliate revenue stream that runs forever with zero marginal cost.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE STREAMS -->
+<section id="revenue">
+  <div class="container">
+    <div class="label label-blue">REVENUE STREAMS</div>
+    <h2 class="section-title">Three ways to make money</h2>
+    <p class="section-sub">Affiliate is the foundation. Sponsorships unlock at scale. The Pro tier is optional but high-margin.</p>
+
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-icon">🔗</div>
+        <div class="rev-phase">PHASE 1 · DAY ONE</div>
+        <div class="rev-name">Affiliate Commissions</div>
+        <div class="rev-desc">Every product recommendation links out via an affiliate tracking link. Earn 8–15% on orders placed within 30 days. iHerb pays 8%, Amazon Associates up to 10%, direct brand programs up to 20%.</div>
+        <div class="rev-potential">$864/mo at 2K visitors</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-icon">🤝</div>
+        <div class="rev-phase">PHASE 2 · 5K+ VISITORS/MO</div>
+        <div class="rev-name">Brand Sponsorships</div>
+        <div class="rev-desc">Supplement brands pay for featured placement, editorial reviews, and newsletter spots. Canadian market is underserved — brands like Garden of Life, Natural Factors, Vega pay $500–$5K/month for relevant, converting audiences.</div>
+        <div class="rev-potential">$2–10K/mo at 20K visitors</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-icon">⭐</div>
+        <div class="rev-phase">PHASE 2 · OPTIONAL</div>
+        <div class="rev-name">Pro Consultation ($9.99/mo)</div>
+        <div class="rev-desc">Unlock a deeper AI protocol, monthly "what to adjust" check-in, and a messaging channel to ask follow-up questions. Low conversion rate but high margin — no fulfilment cost.</div>
+        <div class="rev-potential">$999/mo at 100 subscribers</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-icon">📦</div>
+        <div class="rev-phase">PHASE 3 · YEAR 2+</div>
+        <div class="rev-name">Curated Bundles (Optional)</div>
+        <div class="rev-desc">Partner with a contract manufacturer for a white-label "starter pack" — 2–3 supplements we fully stand behind. Higher margin, builds brand equity. Only worth doing once DTC is profitable.</div>
+        <div class="rev-potential">60–75% gross margin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT ECONOMICS -->
+<section id="economics">
+  <div class="container">
+    <div class="label label-amber">UNIT ECONOMICS</div>
+    <h2 class="section-title">The numbers</h2>
+    <p class="section-sub">Conservative projections. Paid distribution not factored in — this is purely organic growth via content + social.</p>
+
+    <div class="econ-wrap">
+      <table class="econ-table">
+        <thead>
+          <tr>
+            <th>METRIC</th>
+            <th>MONTH 6</th>
+            <th>MONTH 12</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="metric">Monthly visitors</td>
+            <td class="m6">2,000</td>
+            <td class="m12">10,000</td>
+          </tr>
+          <tr>
+            <td class="metric">Quiz completions (20%)</td>
+            <td class="m6">400</td>
+            <td class="m12">2,000</td>
+          </tr>
+          <tr>
+            <td class="metric">Affiliate conversions (15%)</td>
+            <td class="m6">60 orders</td>
+            <td class="m12">300 orders</td>
+          </tr>
+          <tr>
+            <td class="metric">Avg order value</td>
+            <td class="m6">$120</td>
+            <td class="m12">$120</td>
+          </tr>
+          <tr>
+            <td class="metric">Affiliate rev (12% avg)</td>
+            <td class="m6">$864</td>
+            <td class="m12">$4,320</td>
+          </tr>
+          <tr>
+            <td class="metric">Pro subscriptions (5%)</td>
+            <td class="m6">20 × $9.99</td>
+            <td class="m12">100 × $9.99</td>
+          </tr>
+          <tr>
+            <td class="metric">Subscription rev</td>
+            <td class="m6">$200</td>
+            <td class="m12">$999</td>
+          </tr>
+          <tr>
+            <td class="metric">Sponsorships</td>
+            <td class="m6">—</td>
+            <td class="m12">$1,000</td>
+          </tr>
+          <tr>
+            <td class="metric" style="font-weight:700; color: #f0f0f2;">Total MRR</td>
+            <td class="m6" style="font-weight:700;">~$1,100</td>
+            <td class="m12" style="font-weight:800; font-size:16px;">~$6,300</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px; color: var(--muted); margin-top: 16px;">Path to $20–50K/month: sponsorships at 50K visitors + paid distribution. Achievable by end of year 2 with consistent content output.</p>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="label label-purple">ROADMAP</div>
+    <h2 class="section-title">How we get there</h2>
+    <p class="section-sub">Side project economics: low overhead, organic compounding, no outside capital needed.</p>
+
+    <div class="roadmap">
+      <div class="rm-phase">
+        <div class="rm-left">
+          <div class="rm-period">WEEK 1–2</div>
+          <div class="rm-status status-now">NOW</div>
+        </div>
+        <div class="rm-right">
+          <div class="rm-title">Foundation</div>
+          <ul class="rm-items">
+            <li>Launch quiz MVP (done ✓)</li>
+            <li>Wire 3–5 affiliate programs (iHerb, Amazon, Popeye's)</li>
+            <li>Basic landing page with value prop</li>
+            <li>Brand domain + social handles</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rm-phase">
+        <div class="rm-left">
+          <div class="rm-period">MONTH 1–2</div>
+          <div class="rm-status status-soon">NEXT</div>
+        </div>
+        <div class="rm-right">
+          <div class="rm-title">Audience Building</div>
+          <ul class="rm-items">
+            <li>Drive first traffic from D's existing social (share your own stack)</li>
+            <li>Publish 4 cornerstone SEO articles (magnesium Canada, creatine guide, etc.)</li>
+            <li>Add email capture — "get your protocol delivered" CTA</li>
+            <li>TikTok / Reels: "what's in my supplement stack" format</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rm-phase">
+        <div class="rm-left">
+          <div class="rm-period">MONTH 3–6</div>
+          <div class="rm-status status-soon">SOON</div>
+        </div>
+        <div class="rm-right">
+          <div class="rm-title">AI Layer + Monetisation</div>
+          <ul class="rm-items">
+            <li>Upgrade quiz with GPT-4o for richer, personalized explanations</li>
+            <li>Launch Pro tier ($9.99/mo) with monthly check-ins</li>
+            <li>Add product-specific brand links (not just category recommendations)</li>
+            <li>First sponsorship outreach once 5K monthly visitors hit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rm-phase">
+        <div class="rm-left">
+          <div class="rm-period">MONTH 6–12</div>
+          <div class="rm-status status-later">LATER</div>
+        </div>
+        <div class="rm-right">
+          <div class="rm-title">Scale</div>
+          <ul class="rm-items">
+            <li>Content engine: 2–3 SEO articles/week</li>
+            <li>Paid distribution: Meta retargeting for quiz completions</li>
+            <li>Dedicated brand sponsorship packages</li>
+            <li>Evaluate white-label bundle if DTC is profitable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS WORKS -->
+<section id="moat">
+  <div class="container">
+    <div class="label label-green">THE EDGE</div>
+    <h2 class="section-title">Why this works</h2>
+    <p class="section-sub">The supplement market is saturated with products. It's empty on trusted, unbiased curation.</p>
+
+    <div class="moat-grid">
+      <div class="moat-card">
+        <div class="moat-icon">🍁</div>
+        <div class="moat-title">Canada-first positioning</div>
+        <div class="moat-desc">US brands dominate online content. Canadian-specific advice (retailers, regulations, sun/vitamin D reality) is genuinely underserved. Own the niche before anyone notices.</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🏛️</div>
+        <div class="moat-title">Zero conflict of interest</div>
+        <div class="moat-desc">We don't make supplements. Our only incentive is accurate recommendations. This is the actual value prop — and it's rare. Care/of destroyed trust by going vertical.</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">📈</div>
+        <div class="moat-title">Content compounds forever</div>
+        <div class="moat-desc">A good SEO article from year one still drives revenue in year five. Affiliate links don't expire. Unlike ads, you're building an asset, not renting attention.</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🤖</div>
+        <div class="moat-title">AI makes it feel personal</div>
+        <div class="moat-desc">Generic "top 10 supplements" articles convert poorly. A quiz that generates *your* protocol — named, dosed, explained — converts at 2–4x the rate of static content.</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">💸</div>
+        <div class="moat-title">No inventory, ever</div>
+        <div class="moat-desc">Care/of raised $156M and burned it on manufacturing + subscription logistics. We avoid both failure modes. Gross margin is 90%+ until we choose otherwise.</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🧱</div>
+        <div class="moat-title">Low cost to start, hard to kill</div>
+        <div class="moat-desc">~$5K to launch properly. No suppliers, no warehouse, no expiry dates. Once the content machine runs, this business doesn't need much attention to keep earning.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>Ready to build your stack?</h2>
+    <p>Takes 2 minutes. No email required. Evidence-based recommendations for Canada.</p>
+    <div class="cta-buttons">
+      <a href="index.html" class="btn-primary">Take the Quiz →</a>
+      <a href="mailto:ggmaxiworld@gmail.com" class="btn-secondary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  StackSmart · Canada-first supplement curation · Built by ggMaxi 🐙
+</footer>
+
+</body>
+</html>
