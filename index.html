@@ -238,39 +238,39 @@ function getRecommendations(answers) {
   const issues = answers.issues || [];
 
   if (answers.goal === 'muscle' || answers.lifestyle === 'athlete' || answers.lifestyle === 'active') {
-    recs.push({ name: 'Creatine Monohydrate', why: 'Most studied performance supplement ever. Increases strength, power, and muscle gain. Non-negotiable if you train.', dose: '5g/day, any time' });
+    recs.push({ name: 'Creatine Monohydrate', why: 'The most researched supplement in existence and it actually works. More strength, faster recovery, more muscle over time. If you train and you\'re not taking this, you\'re leaving gains on the table.', dose: '5g/day — timing doesn\'t matter, just be consistent' });
   }
   if (answers.goal === 'energy' || issues.includes('low_energy') || issues.includes('brain_fog')) {
-    recs.push({ name: 'Magnesium Glycinate', why: 'Most Canadians are deficient. One supplement that fixes energy, sleep, and focus simultaneously.', dose: '200–400mg before bed' });
-    recs.push({ name: 'Vitamin D3 + K2', why: 'Calgary gets <4 months of adequate sun. Almost certain to be deficient Oct–Apr. Critical for energy and immunity.', dose: '2000–5000 IU D3 + 100mcg K2 daily' });
+    recs.push({ name: 'Magnesium Glycinate', why: 'Most Canadians are low on magnesium and don\'t know it. It\'s behind more "I feel off" complaints than almost anything else — foggy thinking, low energy, poor sleep, random anxiety. This form (glycinate) actually absorbs, unlike the cheap stuff.', dose: '200–400mg before bed' });
+    recs.push({ name: 'Vitamin D3 + K2', why: 'If you live in Canada, you are almost certainly deficient for at least 6 months of the year. No amount of walking outside in winter fixes it at our latitude. Low D tanks your energy, your mood, and your immune system quietly. Just take it.', dose: '2000–5000 IU D3 + 100mcg K2 — with a meal that has fat' });
   }
   if (answers.goal === 'sleep' || issues.includes('poor_sleep')) {
-    recs.push({ name: 'Magnesium Glycinate', why: 'Calms the nervous system, improves sleep quality without grogginess or dependency.', dose: '400mg, 1hr before bed' });
-    recs.push({ name: 'L-Theanine', why: 'Reduces sleep latency — time to fall asleep. No side effects, no dependency.', dose: '200mg at bedtime' });
+    recs.push({ name: 'Magnesium Glycinate', why: 'Not a sleeping pill — it just helps your nervous system actually wind down. You fall asleep faster and the sleep feels deeper. No grogginess the next day, no dependency. One of the few sleep things that actually works without a catch.', dose: '400mg about an hour before bed' });
+    recs.push({ name: 'L-Theanine', why: 'That calm-but-not-sleepy feeling you get from green tea? That\'s theanine. Takes the edge off racing thoughts at night without knocking you out. Stack it with magnesium and it\'s genuinely one of the better cheap sleep hacks.', dose: '200mg at bedtime' });
   }
   if (answers.goal === 'stress' || issues.includes('mood')) {
-    recs.push({ name: 'Ashwagandha (KSM-66)', why: 'Clinically studied adaptogen. Lowers cortisol, improves stress resilience. Effects build over 8 weeks.', dose: '300–600mg daily with food' });
-    recs.push({ name: 'Omega-3 (EPA/DHA)', why: 'Reduces inflammation and supports mood regulation. Critical for brain health.', dose: '2g EPA+DHA daily with food' });
+    recs.push({ name: 'Ashwagandha (KSM-66 form)', why: 'This one takes patience — you won\'t feel it in a week. But after 6–8 weeks of consistent use, the stress response just... softens. Less cortisol spikes, less wired-but-tired. Make sure you get KSM-66 specifically — the other forms are mostly garbage.', dose: '300–600mg daily with food' });
+    recs.push({ name: 'Omega-3 (EPA/DHA)', why: 'Your brain is mostly fat and most people eat terrible fat ratios. Good omega-3s reduce the low-grade inflammation that makes you feel anxious and foggy. Takes a few weeks but one of the most consistently underrated supplements out there.', dose: '2g EPA+DHA daily with food — check the label, the total fish oil number is meaningless' });
   }
   if (answers.goal === 'immune') {
-    recs.push({ name: 'Vitamin D3 + K2', why: 'Immune system cornerstone. Most impactful single supplement for Canadians.', dose: '2000–5000 IU daily' });
-    recs.push({ name: 'Zinc Bisglycinate', why: 'Immune function, wound healing, testosterone support. Commonly low in Canadian diets.', dose: '15–30mg daily with food' });
+    recs.push({ name: 'Vitamin D3 + K2', why: 'Not sexy but genuinely the most important thing a Canadian can take. Your immune system runs partly on Vitamin D and you\'re running low every winter whether you feel it or not. The K2 just makes sure the D goes where it\'s supposed to.', dose: '2000–5000 IU daily with a fatty meal' });
+    recs.push({ name: 'Zinc Bisglycinate', why: 'Zinc is involved in basically every immune response and most people are borderline deficient, especially if you don\'t eat much red meat. The bisglycinate form doesn\'t upset your stomach like zinc oxide does (which is what most cheap supplements use).', dose: '15–30mg with food — not on an empty stomach' });
   }
   if (answers.diet === 'vegan' || answers.diet === 'vegetarian') {
-    recs.push({ name: 'Vitamin B12 (Methylcobalamin)', why: 'Critical if plant-based. Deficiency causes irreversible nerve damage and fatigue over time.', dose: '1000mcg daily' });
-    recs.push({ name: 'Algae Omega-3', why: 'Same EPA/DHA as fish oil from the actual source — algae. No fishy taste.', dose: '500–1000mg EPA+DHA daily' });
+    recs.push({ name: 'Vitamin B12 (Methylcobalamin)', why: 'Not optional if you\'re plant-based. B12 deficiency builds slowly and the damage (nerve damage, cognitive issues) isn\'t reversible once it\'s done. Get the methylcobalamin form — it absorbs far better than cyanocobalamin.', dose: '1000mcg daily — can\'t really overdose on this one' });
+    recs.push({ name: 'Algae Omega-3', why: 'Fish get their omega-3s from algae. Skip the middleman. Same EPA and DHA as fish oil, no fishy burps, and actually sustainable. This is the one area where the vegan version is genuinely just as good.', dose: '500–1000mg EPA+DHA daily' });
   }
   if (issues.includes('joint_pain')) {
-    recs.push({ name: 'Collagen Peptides + Vitamin C', why: 'Supports joint repair and cartilage synthesis. Take 30min before training for maximum absorption.', dose: '10–15g collagen + 50mg Vit C' });
+    recs.push({ name: 'Collagen Peptides + Vitamin C', why: 'Joints don\'t get much blood flow so they\'re slow to heal and slow to benefit from supplementation. The trick is timing — take it 30–45 minutes before you train or move around. The Vitamin C is essential for collagen synthesis, not optional.', dose: '10–15g collagen + 50mg Vit C, 30–45min before activity' });
   }
   if (issues.includes('gut')) {
-    recs.push({ name: 'Multi-strain Probiotic', why: 'Restores microbiome diversity. Look for 10B+ CFU with Lactobacillus and Bifidobacterium strains.', dose: 'Daily on empty stomach' });
+    recs.push({ name: 'Multi-strain Probiotic', why: 'Most probiotic products are borderline useless because the strains die before they reach your gut. You need 10 billion+ CFU with at least Lactobacillus acidophilus and a Bifidobacterium strain. Refrigerated ones tend to be better. Take on an empty stomach in the morning.', dose: 'Daily on an empty stomach — consistency matters more than timing' });
   }
 
   // Baseline for low-budget — always useful
   if (answers.budget === 'low' && recs.length === 0) {
-    recs.push({ name: 'Vitamin D3 + K2', why: 'Best ROI of any supplement for Canadians. Impacts energy, immunity, mood, and sleep.', dose: '2000–5000 IU daily' });
-    recs.push({ name: 'Magnesium Glycinate', why: 'Widely deficient mineral. Improves sleep, reduces anxiety, boosts energy.', dose: '200–400mg before bed' });
+    recs.push({ name: 'Vitamin D3 + K2', why: 'If you\'re only going to take one thing, make it this. Especially in Canada. Energy, immunity, mood — all quietly affected by Vitamin D levels and almost nobody up here has enough.', dose: '2000–5000 IU daily with a meal' });
+    recs.push({ name: 'Magnesium Glycinate', why: 'Cheap, works, almost everyone is deficient. Better sleep, less anxiety, more consistent energy. Buy the glycinate form specifically — the cheap oxide version just gives you loose stools.', dose: '200–400mg before bed' });
   }
 
   // Deduplicate
@@ -282,11 +282,11 @@ function HeroScreen({ onStart }) {
   return (
     <div className="hero-screen">
       <div style={{maxWidth: 480, width: '100%', textAlign:'center'}}>
-        <div className="hero-tag">FREE · 2 MINUTES · NO EMAIL REQUIRED</div>
-        <h1 className="hero-title">Your stack,<br/><span>actually curated.</span></h1>
-        <p className="hero-sub">5 questions. A personalized supplement protocol built around your goals, diet, and budget — not a upsell.</p>
-        <button className="btn-start" onClick={onStart}>Build My Stack →</button>
-        <div className="hero-note">Canada-first recommendations · Evidence-based only</div>
+        <div className="hero-tag">FREE · 2 MIN · NO EMAIL</div>
+        <h1 className="hero-title">Stop guessing<br/><span>what to take.</span></h1>
+        <p className="hero-sub">Most people are either wasting money on stuff that does nothing, or missing the 2–3 things that would actually make a difference. 5 questions and we'll tell you which.</p>
+        <button className="btn-start" onClick={onStart}>Find out what I need →</button>
+        <div className="hero-note">Built for Canada · No brand deals influencing results</div>
       </div>
     </div>
   );
@@ -341,7 +341,7 @@ function QuizScreen({ onDone }) {
 
         <div className="q-emoji">{q.emoji}</div>
         <h2 className="q-text">{q.question}</h2>
-        {q.multi && <p className="q-sub">Select all that apply, or skip</p>}
+        {q.multi && <p className="q-sub">Pick what applies. If nothing does, just skip it.</p>}
 
         <div className="options">
           {q.options.map(opt => (
@@ -374,9 +374,9 @@ function ResultsScreen({ answers, onRetake }) {
     <div className="screen">
       <div className="card">
         <div className="results-header">
-          <div className="results-badge">YOUR STACK IS READY</div>
-          <h1 className="results-title">Your Protocol</h1>
-          <p className="results-sub">Start with #1 and #2. Give them 6–8 weeks. Add more only when you feel a clear need.</p>
+          <div className="results-badge">HERE'S WHAT YOU ACTUALLY NEED</div>
+          <h1 className="results-title">Your honest stack.</h1>
+          <p className="results-sub">No fillers, no brand deals. Just the stuff worth buying — ranked by what'll move the needle most for you specifically.</p>
         </div>
 
         <div className="rec-list">
@@ -396,11 +396,11 @@ function ResultsScreen({ answers, onRetake }) {
         </div>
 
         <div className="tip-card">
-          <div className="tip-title">💡 The most common mistake</div>
-          <div className="tip-text">Buying 8 supplements at once. You won't know what's working. Stack slowly, evaluate honestly.</div>
+          <div className="tip-title">⚠️ Genuinely — don't buy all of these at once</div>
+          <div className="tip-text">Start with #1. Give it 6 weeks. If you feel nothing, add #2. Most people buy a cabinet full, feel overwhelmed, quit everything, and blame the supplements. The supplements weren't the problem.</div>
         </div>
 
-        <button className="btn-retake" onClick={onRetake}>← Retake Quiz</button>
+        <button className="btn-retake" onClick={onRetake}>← Start over</button>
       </div>
     </div>
   );
